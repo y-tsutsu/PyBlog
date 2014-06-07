@@ -23,14 +23,26 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="entries\" />
     <Folder Include="mysite\" />
+    <Folder Include="templates\" />
+    <Folder Include="templates\admin\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="entries\admin.py" />
+    <Compile Include="entries\models.py" />
+    <Compile Include="entries\tests.py" />
+    <Compile Include="entries\views.py" />
+    <Compile Include="entries\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="mysite\settings.py" />
     <Compile Include="mysite\urls.py" />
     <Compile Include="mysite\wsgi.py" />
     <Compile Include="mysite\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\admin\base_site.html" />
+    <Content Include="templates\admin\index.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>

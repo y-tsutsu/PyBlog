@@ -1,3 +1,5 @@
+﻿# coding: utf-8
+
 """
 Django settings for mysite project.
 
@@ -34,8 +36,10 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'entries',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,3 +84,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+    'C:/work/Python/PyBlog/pyblog/templates',
+)
