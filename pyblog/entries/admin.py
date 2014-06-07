@@ -6,7 +6,7 @@ from entries.models import Entry
 class EntryAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Title',              {'fields':['title']}),
-        ('Detail information', {'fields':['pub_date', 'content'], 'classes':['collapse']}),
+        ('Detail information', {'fields':['content'], 'classes':['collapse']}),
     ]
     list_display = ('title', 'pub_date', 'was_published_recently')
     list_filter = ['pub_date']
