@@ -31,6 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="entries\admin.py" />
+    <Compile Include="entries\forms.py" />
     <Compile Include="entries\models.py" />
     <Compile Include="entries\tests.py" />
     <Compile Include="entries\urls.py" />
@@ -45,6 +46,7 @@
   <ItemGroup>
     <Content Include="templates\admin\base_site.html" />
     <Content Include="templates\admin\index.html" />
+    <Content Include="templates\entries\create.html" />
     <Content Include="templates\entries\list.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

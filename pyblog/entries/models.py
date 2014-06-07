@@ -7,7 +7,7 @@ from django.utils import timezone
 class Entry(models.Model):
     title = models.CharField(max_length = 100)
     content = models.TextField(max_length = 1000)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published', auto_now_add = True)
 
     def __str__(self):
         return self.title
