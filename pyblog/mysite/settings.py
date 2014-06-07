@@ -86,5 +86,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (
-    'C:/work/Python/PyBlog/pyblog/templates',
+    os.path.join(BASE_DIR, 'templates'),
 )
