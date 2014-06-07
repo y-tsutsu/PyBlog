@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
 </head>
 <body>
+    {% if object %}
+    <h3>編集</h3>
+    {% else %}
     <h3>新規作成</h3>
+    {% endif %}
     <br />
 
     {% if form.has_errors %}

@@ -62,7 +62,7 @@
     <Content Include="static\js\bootstrap.min.js" />
     <Content Include="templates\admin\base_site.html" />
     <Content Include="templates\admin\index.html" />
-    <Content Include="templates\entries\create.html" />
+    <Content Include="templates\entries\update.html" />
     <Content Include="templates\entries\detail.html" />
     <Content Include="templates\entries\list.html" />
   </ItemGroup>
