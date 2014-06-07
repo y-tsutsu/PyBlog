@@ -1,21 +1,29 @@
-﻿<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PyBlog</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+    <h3>一覧</h3>
 
-<h3>一覧</h3>
+    {% for entry in object_list %}
 
-{% for entry in object_list %}
+    <strong>
+        <a href="/entries/detail/{{ entry.id }}">{{ entry.title }}</a>
+    </strong>
+    <br />
 
-<dt>
-    <a href="/entries/detail/{{ entry.id }}">{{ entry.title }}</a>
-</dt>
-
-<dd>
     {{ entry.content }}
-</dd><br />
+    <br /><br />
 
-<dd class="operation">
     <a href="/entries/update/{{ entry.id }}">編集</a>
     <a href="/entries/delete/{{ entry.id }}">削除</a>
-</dd>
-<hr />
+    <hr />
 
-{% endfor %}
+    {% endfor %}
+</body>
+</html>
