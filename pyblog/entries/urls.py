@@ -1,7 +1,7 @@
 ﻿# coding: utf-8
 
 from django.conf.urls import patterns, include, url
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from entries.models import Entry
 from entries.forms import HTML5Form
@@ -17,7 +17,11 @@ urlpatterns = patterns('entries.views',
             success_url = '/entries/',
             template_name = 'entries/create.html',
             form_class = HTML5Form)),
-    url(r'^(?P<entry_id>\d+)/$', 'detail'),
+    url(r'^detail/(?P<pk>\d+)/$',
+        DetailView.as_view(
+            model = Entry,
+            template_name = 'entries/detail.html'),
+        name = "entry_detail"),
     #url(r'^(?P<poll_id>\d+)/results/$', 'results'),
     #url(r'^(?P<poll_id>\d+)/vote/$', 'vote'),
 )

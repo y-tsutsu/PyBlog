@@ -14,4 +14,4 @@ class HTML5Form(EntryForm):
  
         for _, field in self.fields.items():
             if field.widget.is_required:
-                field.widget.attrs['required title'] = "aaaaaa"
+                field.widget.attrs['required title'] = ""

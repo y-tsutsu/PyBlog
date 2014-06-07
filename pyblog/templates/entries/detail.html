@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PyBlog</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+</head>
+<body>
+    <strong>
+        {{ object.title }}
+    </strong>
+    <br />
+
+    {{ object.content}}
+    <br /><br />
+
+    <a href="/entries/update/{{ object.id }}">編集</a>
+    <a href="/entries/delete/{{ object.id }}">削除</a>
+    <hr />
+
+    <a href="/entries/">一覧に戻る</a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+</body>
+</html>
