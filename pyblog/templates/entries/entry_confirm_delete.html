@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PyBlog</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+</head>
+<body>
+    <form action="." method="post">
+        {% csrf_token %}
+        <p>削除します．よろしいですか？</p><br />
+
+        <input type="submit" />
+        <input type="button" value="いいえ" onclick="location.href='/entries/'" />
+    </form><br />
+
+    <div class="operation">
+        <a href="/entries/">一覧に戻る</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+</body>
+</html>
