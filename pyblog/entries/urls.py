@@ -2,6 +2,7 @@
 
 from django.conf.urls import patterns, include, url
 from django.views.generic import ListView, CreateView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from entries.models import Entry
 from entries.forms import HTML5Form
 
@@ -20,3 +21,5 @@ urlpatterns = patterns('entries.views',
     #url(r'^(?P<poll_id>\d+)/results/$', 'results'),
     #url(r'^(?P<poll_id>\d+)/vote/$', 'vote'),
 )
+
+urlpatterns += staticfiles_urlpatterns()
