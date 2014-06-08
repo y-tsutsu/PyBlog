@@ -32,6 +32,7 @@
     <Folder Include="templates\" />
     <Folder Include="templates\admin\" />
     <Folder Include="templates\entries\" />
+    <Folder Include="templates\entries\registration\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="entries\admin.py" />
@@ -62,11 +63,14 @@
     <Content Include="static\js\bootstrap.min.js" />
     <Content Include="templates\admin\base_site.html" />
     <Content Include="templates\admin\index.html" />
+    <Content Include="templates\entries\base.html" />
     <Content Include="templates\entries\base_entries.html" />
     <Content Include="templates\entries\entry_confirm_delete.html" />
     <Content Include="templates\entries\entry_detail.html" />
     <Content Include="templates\entries\entry_form.html" />
     <Content Include="templates\entries\entry_list.html" />
+    <Content Include="templates\entries\registration\login.html" />
+    <Content Include="templates\entries\registration\logout.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>

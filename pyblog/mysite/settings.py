@@ -93,3 +93,7 @@ STATICFILES_DIRS = (
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
+
+LOGIN_REDIRECT_URL = "/entries/"
+
+LOGIN_URL = "/entries/login/"

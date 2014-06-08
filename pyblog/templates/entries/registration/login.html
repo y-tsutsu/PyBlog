@@ -1,0 +1,32 @@
+﻿{% extends "entries/base.html" %}
+{% block main_content %}
+
+<div class="validation">
+    <p>
+        <error>
+            {% if form.errors %}
+            正しいユーザ名とパスワードを入力してください (大文字小文字は区別します) ．
+            {% endif %}
+        </error>
+    </p>
+    <br />
+    <form method="post" action=".">
+        {% csrf_token %}
+        <label for="username">ユーザ名：</label>
+        {{ form.username }}
+        <br />
+        <label for="password">パスワード：</label>
+        {{ form.password }}
+        <br />
+        <input type="submit" value="ログイン" />
+    </form>
+</div>
+
+<br />
+<br />
+
+<div class="operation">
+    <a href="/entries/">一覧に戻る</a>
+</div>
+
+{% endblock main_content %}

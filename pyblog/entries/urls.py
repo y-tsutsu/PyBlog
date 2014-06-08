@@ -6,7 +6,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from entries.models import Entry
 from entries.forms import HTML5Form
 
-urlpatterns = patterns('entries.views',
+urlpatterns = patterns('',
     url(r'^$',
         ListView.as_view(
             queryset = Entry.objects.order_by('-pub_date'),
@@ -32,6 +32,13 @@ urlpatterns = patterns('entries.views',
             model = Entry,
             success_url = '/entries/',
             template_name = 'entries/entry_confirm_delete.html')),
+)
+
+urlpatterns += patterns('',
+    (r'^login/$', 'django.contrib.auth.views.login',
+        {'template_name':'entries/registration/login.html'}),
+    (r'^logout/$', 'django.contrib.auth.views.logout',
+        {'template_name':'entries/registration/logout.html'}),
 )
 
 urlpatterns += staticfiles_urlpatterns()
