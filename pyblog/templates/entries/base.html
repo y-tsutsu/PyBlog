@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if object.title %}
-    <title>{{object.title}}</title>
+        <title>{{object.title}}</title>
     {% else %} 
-    <title>PyBlog</title>
+        <title>PyBlog</title>
     {% endif %}
     
     <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
 </head>
 <body>
     {% block main_content %}
-
     {% endblock main_content %}
 </body>
 </html>

@@ -1,6 +1,7 @@
 ﻿{% extends "entries/base_entries.html" %}
 {% block entry_content %}
 
+{% if not user.is_anonymous %}
 <form action="." method="post">
     {% csrf_token %}
     <p>削除します．よろしいですか？</p><br />
@@ -8,6 +9,7 @@
     <input type="submit" />
     <input type="button" value="いいえ" onclick="location.href='/entries/'" />
 </form><br />
+{% endif %}
 
 <div class="operation">
     <a href="/entries/">一覧に戻る</a>

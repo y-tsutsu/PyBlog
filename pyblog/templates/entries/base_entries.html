@@ -1,10 +1,22 @@
 ﻿{% extends "entries/base.html" %}
 {% block main_content %}
 
-<a href="/entries/create/">記事の追加</a>
+{% if user.is_anonymous %}
+<div class="operation">
+    <a href="/entries/login/">ログインする</a>
+</div>
+{% else %}
+<p>
+    ユーザ名： <b>{{ user.username }}</b>
+    <a href="/entries/logout/">【ログアウト】</a>
+</p>
+<div class="operation">
+    <a href="/entries/create/">記事の追加</a>
+</div>
+{% endif %}
 <hr />
-{% block entry_content %}
 
+{% block entry_content %}
 {% endblock entry_content %}
 
 {% endblock main_content %}

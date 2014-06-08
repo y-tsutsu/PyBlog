@@ -1,6 +1,7 @@
 ﻿{% extends "entries/base_entries.html" %}
 {% block entry_content %}
 
+{% if not user.is_anonymous %}
 {% if object %}
 <h3>編集</h3>
 {% else %}
@@ -29,6 +30,7 @@
         <p><input type="submit" value="保存" /></p><br />
     </form>
 </div>
+{% endif %}
 
 <div class="operation">
     <a href="/entries/">一覧に戻る</a>
