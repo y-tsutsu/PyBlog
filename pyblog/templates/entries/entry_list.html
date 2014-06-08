@@ -1,32 +1,25 @@
-﻿<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PyBlog</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
-</head>
-<body>
-    <h3>一覧</h3>
+﻿{% extends "entries/base_entries.html" %}
+{% block entry_content %}
 
-    {% for entry in object_list %}
+<h3>一覧</h3>
 
-    <strong>
-        <a href="/entries/detail/{{ entry.id }}">{{ entry.title }}</a>
-    </strong>
-    <br />
+{% for entry in object_list %}
 
-    {{ entry.content }}
-    <br /><br />
+<strong>
+    <a href="/entries/detail/{{ entry.id }}">{{ entry.title }}</a>
+</strong>
+<br />
 
-    <a href="/entries/update/{{ entry.id }}">編集</a>
-    <a href="/entries/delete/{{ entry.id }}">削除</a>
-    <hr />
+{{ entry.content }}
+<br /><br />
 
-    {% endfor %}
+<a href="/entries/update/{{ entry.id }}">編集</a>
+<a href="/entries/delete/{{ entry.id }}">削除</a>
+<hr />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endfor %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+
+{% endblock entry_content %}

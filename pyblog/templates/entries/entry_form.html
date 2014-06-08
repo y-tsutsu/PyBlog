@@ -1,47 +1,40 @@
-﻿<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PyBlog</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
-</head>
-<body>
-    {% if object %}
-    <h3>編集</h3>
-    {% else %}
-    <h3>新規作成</h3>
-    {% endif %}
-    <br />
+﻿{% extends "entries/base_entries.html" %}
+{% block entry_content %}
 
-    {% if form.has_errors %}
-    {% for field in form.fields %}
+{% if object %}
+<h3>編集</h3>
+{% else %}
+<h3>新規作成</h3>
+{% endif %}
+<br />
 
-    {% if field.error %}
-    {{ field.error }}
-    {% endif %}
+{% if form.has_errors %}
+{% for field in form.fields %}
 
-    {% endfor %}
-    {% endif %}
+{% if field.error %}
+{{ field.error }}
+{% endif %}
 
-    <div class="validation">
-        <form action="." method="post" accept-charset="utf-8">
-            {% csrf_token %}
-            <label for="id_title">タイトル</label> {{ form.title }}
-            <!--        {% if form.title.errors %} <p><error> {{ form.title.errors|join:", "}}</error></p>{% endif %}-->
-            <br /><br />
-            <label for="id_content">内容</label> {{ form.content }}
-            <!--        {% if form.content.errors %} <p><error> {{ form.content.errors|join:", "}}</error></p><br /><br />{% endif %}-->
-            <p><input type="submit" value="保存" /></p><br />
-        </form>
-    </div>
+{% endfor %}
+{% endif %}
 
-    <div class="operation">
-        <a href="/entries/">一覧に戻る</a>
-    </div>
+<div class="validation">
+    <form action="." method="post" accept-charset="utf-8">
+        {% csrf_token %}
+        <label for="id_title">タイトル</label> {{ form.title }}
+        <!--        {% if form.title.errors %} <p><error> {{ form.title.errors|join:", "}}</error></p>{% endif %}-->
+        <br /><br />
+        <label for="id_content">内容</label> {{ form.content }}
+        <!--        {% if form.content.errors %} <p><error> {{ form.content.errors|join:", "}}</error></p><br /><br />{% endif %}-->
+        <p><input type="submit" value="保存" /></p><br />
+    </form>
+</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-</body>
-</html>
+<div class="operation">
+    <a href="/entries/">一覧に戻る</a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+
+{% endblock entry_content %}

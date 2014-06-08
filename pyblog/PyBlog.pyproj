@@ -62,9 +62,11 @@
     <Content Include="static\js\bootstrap.min.js" />
     <Content Include="templates\admin\base_site.html" />
     <Content Include="templates\admin\index.html" />
-    <Content Include="templates\entries\update.html" />
-    <Content Include="templates\entries\detail.html" />
-    <Content Include="templates\entries\list.html" />
+    <Content Include="templates\entries\base_entries.html" />
+    <Content Include="templates\entries\entry_confirm_delete.html" />
+    <Content Include="templates\entries\entry_detail.html" />
+    <Content Include="templates\entries\entry_form.html" />
+    <Content Include="templates\entries\entry_list.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
